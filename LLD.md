@@ -1,7 +1,7 @@
 ## LLD Design Patterns
 
 # Creational Patterns (Object Creation)
-Singleton Pattern \
+Singleton Pattern #################################################################
 
 Intuition: Ensure a class has only one instance and provide a global access point to it.
 Code Intuition: Make constructor private so new instance can't be created anywhere else and then expose a static method which actually creates and returns the instance. So anywhere this static method is getting called, same instance will be returned.
