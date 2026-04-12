@@ -1,7 +1,7 @@
 ## LLD Design Patterns
 
 # Creational Patterns (Object Creation)
-################################################################# Singleton Pattern #################################################################\
+Singleton Pattern \
 
 Intuition: Ensure a class has only one instance and provide a global access point to it.
 Code Intuition: Make constructor private so new instance can't be created anywhere else and then expose a static method which actually creates and returns the instance. So anywhere this static method is getting called, same instance will be returned.
@@ -54,11 +54,11 @@ logger2.log("world")
 console.log(logger1 === logger2)         //True
 
 
-################################################################# Factory Method Pattern #################################################################
+Factory Method Pattern #################################################################
 
 Isolates the Object cretion. Pass type and get the object you want to create. 
 
-################################################################# Abstract Factory Pattern #################################################################
+Abstract Factory Pattern #################################################################
 
 Intuition: Factory creates a FAMILY of related objects
 
@@ -101,7 +101,7 @@ const factory = new WindowsFactory()
 const button = factory.createButton()
 const checkbox = factory.createCheckbox()
 
-################################################################# Builder Pattern #################################################################
+ Builder Pattern #################################################################
 
 Controls Constructor Explosion when creating objects, dont have to pass so many values while creating objects.
 Intuition: Create methods which returns the same type by attaching the field.
@@ -119,7 +119,7 @@ Use cases: complete object being built in multiple phases | constructor has many
 
 # Structural Patterns (Class relationships)
 
-################################################################# Adapter Pattern #################################################################
+ Adapter Pattern #################################################################
 
 When to Use Adapter:
 You should think Adapter Pattern when:
@@ -156,7 +156,7 @@ class RazorpayAdapter implements Paymentgateway {
   }
 }
 
-################################################################# Decorator Pattern #################################################################
+ Decorator Pattern #################################################################
 
 Base object
    ↓
@@ -178,7 +178,7 @@ Example:
     -->
 
 
-################################################################# Facade Pattern #################################################################
+ Facade Pattern #################################################################
 
 Intuition: Client shouldn't know too much like In Ride service example. Client
 shouldn't call:
@@ -222,11 +222,11 @@ facade.completeRide(10)
 
 # Behavioral Patterns (Communication)
 
-################################################################# Strategy Pattern ################################################################# 
+ Strategy Pattern ################################################################# 
 
 When behaviour changes per type like - UPIPayment, CardPayment, CashPayment. Have a BaseStrategy then extend to various types.
 
-################################################################# Observer Pattern #################################################################
+ Observer Pattern #################################################################
 
 One object changes state and multiple other objects need to react automatically (Solves tight coupling of Classes like Ride and NotificationService)
 Main components: 
@@ -247,7 +247,7 @@ NotificationService.onRideCompleted()
 BillingService.onRideCompleted()
 AnalyticsService.onRideCompleted()
 
-################################################################# Command Pattern #################################################################
+ Command Pattern #################################################################
 
 Use this when you want to do some actions as commands.
 
@@ -348,7 +348,7 @@ queue.add(resizeCommand)
 queue.process()
 
 
-################################################################# Chain of Responsibility #################################################################
+ Chain of Responsibility #################################################################
 
 interface Handler {
   setNext(handler: Handler): Handler
